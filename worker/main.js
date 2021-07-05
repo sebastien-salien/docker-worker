@@ -5,6 +5,7 @@ const port = process.env.PORT || 3000
 const randInt = (min, max) => Math.floor(Math.random() * (max - min)) + min
 let mult = false
 let add = false
+let task = {}
 
 app.use(express.json())
 app.use(
@@ -22,6 +23,7 @@ if (process.env.MULT)
     }
     mult = true
     const { a, b } = req.body
+    task = { a, b }
     console.log('mult', req.body)
     const duration = randInt(3000, 12000)
     setTimeout(() => {
@@ -39,6 +41,7 @@ if (process.env.ADD)
     }
     add = true
     const { a, b } = req.body
+    task = { a, b }
     console.log('add', req.body)
     const duration = randInt(3000, 7000)
     setTimeout(() => {
@@ -48,6 +51,14 @@ if (process.env.ADD)
   })
 
 app.get('/', (req, res) => {
+  if (mult) {
+    res.send(JSON.stringify({ type: 'mult', task }))
+    return
+  }
+  if (add) {
+    res.send(JSON.stringify({ type: 'add', task }))
+    return
+  }
   res.send('ready to work')
 })
 
