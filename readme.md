@@ -2,8 +2,7 @@
 
 Le rendu de l'exercice se fera via git. Pensez bien à commit à chaque fin d'exercice.
 Vous pouvez utiliser tous les outils que vous voulez pendant l'évalutions.
-
-Ce fera surtout sur l'utilisation de docker et docker-compose.
+Elle se fera surtout sur l'utilisation de docker et docker-compose.
 
 ## Présentation
 
