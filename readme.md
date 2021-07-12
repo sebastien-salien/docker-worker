@@ -77,3 +77,55 @@ Créez une configuration qui exécute une centaine de tâches dispatchées parmi
 On commit!
 
 Pensez à m'envoyer un lien vers votre git sur slack ou par mail: arthur.escriou@gmail.com
+
+### Annexe
+
+Some commands that could help you :
+
+build an image (You have to run it in folder with a Dockerfile)
+
+```sh
+docker build -t imageName .
+```
+
+run an image
+
+```sh
+docker run imageName -d
+```
+
+stop docker instance
+
+```sh
+docker stop instanceID
+```
+
+get log of an instance
+
+```sh
+docker exec -it instanceID sh
+```
+
+list of all docker images on your device
+
+```sh
+docker images
+```
+
+list of all instances running on your device
+
+```sh
+docker ps
+```
+
+build and run a docker-compose stack (You have to run it in folder with a docker-compose.yml)
+
+```sh
+docker-compose up
+```
+
+#### Additionnaly you can use those official cheat sheets :
+
+- <a href="https://www.docker.com/sites/default/files/d8/2019-09/docker-cheat-sheet.pdf"> Docker</a>
+
+- <a href="https://devhints.io/docker-compose"> Docker-compose</a>
