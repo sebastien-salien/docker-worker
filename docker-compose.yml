@@ -25,6 +25,20 @@ services:
       - MULT=true
       - ADD=true
       - PORT=8080
+  worker2:
+    build:
+      context: ./worker
+    image: worker
+    ports:
+     - "8081:8081"
+    networks:
+     - webproxy
+    environment: 
+     - MULT=true
+     - ADD=true
+     - PORT=8081 
+    
+    
 networks:
   webproxy: 
     driver: bridge
