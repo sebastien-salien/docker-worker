@@ -37,6 +37,31 @@ services:
      - MULT=true
      - ADD=true
      - PORT=8081 
+  worked_add:
+    build:
+      context: ./worker
+    image: worker
+    ports:
+      - "8080-8083:8888"
+    networks:
+      - webproxy
+    environment: 
+      - MULT=true
+      - ADD=true
+      - PORT:8888
+  worked_mult:
+    build:
+      context: ./worker
+    image: worker
+    ports:
+      - "8084-8087:8888"
+    networks:
+      - webproxy
+ 
+    environment: 
+      - MULT=true
+      - ADD=true
+      - PORT=8888 
     
     
 networks:
